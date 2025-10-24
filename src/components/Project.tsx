@@ -16,11 +16,16 @@ export type Project = {
     repo?: string;
 
 }
-
+type ProjectList = {
+  items: Project[];
+  page: number;
+  pageSize: number;
+  total: number;
+};
 
 
 export function Projects() {
-    const [projects, setProjects] = useState<Project[]>([]);
+    const [data, setData] = useState<ProjectList | null>(null);
     const [loading, setLoading] = useState(true);
     const [err, setErr] = useState<string | null>(null);
 
@@ -31,15 +36,15 @@ export function Projects() {
     };
 
     useEffect(() => {
-        getJSON<Project[]>("/api/projects")
-            .then(setProjects)
+        getJSON<ProjectList>("/api/projects")
+            .then(setData)
             .catch((e) => setErr(e.message))
             .finally(() => setLoading(false));
     }, []);
 
     if (loading) return <div className="px-6 py-20 text-center">Loading projects...</div>;
     if (err) return <p className="text-red-600">Error: {err}</p>;
-    if (projects.length === 0) return <div className="px-6 py-20 text-center">No projects found.</div>;
+    if (!data || data.items.length === 0) return <div className="px-6 py-20 text-center">No projects found.</div>;
 
     return (
         <section id="projects" className="px-6 py-20">
@@ -47,7 +52,7 @@ export function Projects() {
                 <SectionHeading title="Featured Projects" subtitle="A few things I’ve done." />
 
                 <ul className="mt-10 grid gap-6 md:grid-cols-2">
-                    {projects.map((p, i) => {
+                    {data.items.map((p, i) => {
                         const n = ((i % 5) + 1) as 1 | 2 | 3 | 4 | 5; // TypeScript type assertion to limit n to values between 1 -> 5
                         return (
                             <li key={p.slug} className="rounded-2xl border border-gray-200 p-5 hover:shadow-sm transition">

@@ -4,7 +4,7 @@ export const API_BASE =
 
 
 export async function getJSON<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_BASE}${path}`, init);
+  const res = await fetch(`${API_BASE}${path}`, { ...init},);
   if (!res.ok) {
     const text = await res.text().catch(() => "");
     throw new Error(`GET ${path} failed: ${res.status} ${text}`);
@@ -23,6 +23,7 @@ export async function postJSON<TBody, TResp = unknown>(
     method: "POST",
     headers: { "Content-Type": "application/json", ...(init?.headers || {}) },
     body: JSON.stringify(body),
+    cache: "no-store",
   });
   if (!res.ok) {
     const text = await res.text().catch(() => "");

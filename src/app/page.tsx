@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Project";
 import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
+import { ContactForm } from "@/components/Contact";
 
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
-      <Contact />
+      <ContactForm />
 
     </>
 

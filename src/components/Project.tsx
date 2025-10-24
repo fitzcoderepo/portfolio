@@ -47,7 +47,7 @@ export function Projects() {
     if (!data || data.items.length === 0) return <div className="px-6 py-20 text-center">No projects found.</div>;
 
     return (
-        <section id="projects" className="px-6 py-20">
+        <section id="projects" className="min-h-[80vh] px-6 py-20">
             <div className="mx-auto max-w-5xl">
                 <SectionHeading title="Featured Projects" subtitle="A few things I’ve done." />
 

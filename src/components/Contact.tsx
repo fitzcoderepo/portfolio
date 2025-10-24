@@ -59,7 +59,7 @@ export function ContactForm() {
 
 
     return (
-        <section id="contact" className="px-6 py-20">
+        <section id="contact" className="min-h-[80vh] px-6 py-20 bg-zinc-300 text-zinc-800">
             <div className="mx-auto max-w-2xl text-center">
                 <SectionHeading title="Contact" subtitle="Let’s build something together" />
 
@@ -86,35 +86,35 @@ export function ContactForm() {
 
                     <div className="grid gap-4">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                            <label htmlFor="name" className="block text-sm font-medium">Name</label>
                             <input
                                 id="name"
                                 name="name"
                                 type="text"
                                 required
-                                className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black/20"
+                                className="mt-1 w-full rounded-md border border-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black/20"
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                            <label htmlFor="email" className="block text-sm font-medium">Email</label>
                             <input
                                 id="email"
                                 name="email"
                                 type="email"
                                 required
-                                className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black/20"
+                                className="mt-1 w-full rounded-md border border-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black/20"
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                            <label htmlFor="message" className="block text-sm font-medium">Message</label>
                             <textarea
                                 id="message"
                                 name="message"
                                 required
                                 rows={5}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black/20"
+                                className="mt-1 w-full rounded-md border border-zinc-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black/20"
                             />
                         </div>
 

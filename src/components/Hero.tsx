@@ -2,19 +2,23 @@
 
 export function Hero() {
   return (
-    <section id="top" className="min-h-[100vh] flex flex-col items-center justify-center px-6 py-24 text-center text-zinc-200">
-      <h1 className="text-8xl md:text-8xl font-bold text-zinc-200 tracking-tight">Hello, world.</h1>
-      <br />
-      <h4 className="text-lg md:text-lg font-semibold mt-4 text-zinc-500">
-        I'm a software developer who builds backend systems and the UIs they power.
-      </h4>
-      <p className="mt-4 max-w-4xl text-lg text-gray-500">
-        
-      </p>
-      <div className="mt-8 flex gap-3">
-        <a href="#about" className="rounded-xl px-6 py-3 border border-gray-300 hover:bg-zinc-500">About me</a>
-        <a href="#projects" className="rounded-xl px-6 py-3 border border-gray-300 hover:bg-zinc-500">See projects</a>
-        <a href="#contact" className="rounded-xl px-6 py-3 border border-gray-300 hover:bg-zinc-500">Contact</a>
+    <section id="top" className="min-h-[100vh] scroll-mt-24 relative inset-0 [background:radial-gradient(60%_60%_at_50%_0%,rgba(56,189,248,0.35),transparent_60%)] ">
+
+      <div className="min-h-[100vh] flex flex-col items-center justify-center px-6 py-24 text-center text-zinc-200">
+
+        <h1 className="text-8xl md:text-8xl font-bold tracking-tight">Hello, world.</h1>
+        <br />
+        <h4 className="text-lg md:text-lg font-semibold mt-4 text-zinc-500">
+          I'm a software developer who builds backend systems and the UIs they power.
+        </h4>
+        <p className="mt-4 max-w-4xl text-lg text-gray-500">
+
+        </p>
+        <div className="mt-8 flex gap-3">
+          <a href="#about" className="rounded-xl px-6 py-3 border border-gray-300 hover:bg-zinc-500">About me</a>
+          <a href="#projects" className="rounded-xl px-6 py-3 border border-gray-300 hover:bg-zinc-500">See projects</a>
+          <a href="#contact" className="rounded-xl px-6 py-3 border border-gray-300 hover:bg-zinc-500">Contact</a>
+        </div>
       </div>
     </section>
   )
